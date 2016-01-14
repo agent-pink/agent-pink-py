@@ -5,5 +5,5 @@ from . import handlers
 app = web.Application([
     (r"/", handlers.Articles),
     (r"/articles/", handlers.Articles),
-    (r"/articles/(\w+)", handlers.Article),
+    (r"/articles/([^/]+)", handlers.Article),
 ])

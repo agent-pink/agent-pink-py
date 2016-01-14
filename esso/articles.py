@@ -16,7 +16,7 @@ def load(pat):
     for name in glob(pat):
         with open(name, "r") as f:
             articles.append(Article(f))
-    articles.sort(key=lambda x: x.meta["date"])
+    articles.sort(key=lambda x: x.meta["date"], reverse=True)
     return articles
 def article_map(articles):
     amap = {}

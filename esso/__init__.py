@@ -1,9 +1,9 @@
 from tornado import web
+from . import handlers
 
-class Hello(web.RequestHandler):
-    def get(self):
-        self.write("Hello World")
 
 app = web.Application([
-    ("/", Hello),
+    (r"/", handlers.Articles),
+    (r"/articles/", handlers.Articles),
+    (r"/articles/(\w+)", handlers.Article),
 ])

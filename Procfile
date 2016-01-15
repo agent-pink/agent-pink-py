@@ -1,1 +1,1 @@
-web: pypy -m esso
+web: pypy -m agent_pink

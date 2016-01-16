@@ -1,4 +1,5 @@
 import json
+from markdown import markdown
 from glob import glob
 
 class Article(object):
@@ -9,7 +10,7 @@ class Article(object):
                 break
             lines.append(line)
         self.meta = json.loads("".join(lines))
-        self.contents = "".join(f.readlines())
+        self.contents = markdown("".join(f.readlines()))
 
 def load(pat):
     articles = []
